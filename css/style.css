@@ -1,0 +1,32 @@
+:root {
+    --maxWidth: 1280px;
+    --white: #FFF;
+    --light: #F5F5F5;
+    --black: #000000;
+    --orange: #FF9D00;
+    --lightOrange: #FFC260;
+    --green: #03A84E;
+    --lightGreen: #6ECE8A;
+    --grey: #0F241B;
+    --midGrey:#1D352A;
+    --tertiaryGrey: #4B6358;
+    --lightGrey: #F0F4F2;
+    --fontLarge: 5.6rem;
+    --fontMedium: 1.25rem;
+    --fontRegular: 1rem;
+    --fontSmall: 0.8rem;
+   }
+
+   * {
+       box-sizing: border-box;
+       font-family: 'Cerebri Sans', PT Serif;
+       margin: 0;
+       padding: 0;
+   }
+
+   body{
+       margin: 0;
+       padding: 0;
+       background-color: var(--light);
+       overflow-x: hidden;
+   }   
