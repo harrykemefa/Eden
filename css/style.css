@@ -31,6 +31,12 @@
        overflow-x: hidden;
    } 
    
+   canvas{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+   }
+
    .intro{
     text-align: center;
     display: flex;
