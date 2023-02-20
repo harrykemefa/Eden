@@ -25,7 +25,9 @@
        margin: 0;
        padding: 0;
    }
-
+img{
+    object-fit: contain;
+}
    body{
        margin: 0;
        padding: 0;
@@ -90,6 +92,14 @@
     padding-top: 1.5rem;
 }
 
+div.flex{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -110,7 +120,7 @@ div.tab {
     justify-content: space-around;
     align-items: center;
     padding: 0.4rem;
-    width: 60%;
+    width: 80%;
     margin: 25px auto;
     position: relative;
     color: var(--grey);
@@ -122,6 +132,7 @@ div.tab {
     text-align: center;
     font-weight: 500;
     font-size: var(--fontMedium);
+    cursor: pointer;
 }
 
 .tab-item{
@@ -131,7 +142,7 @@ div.tab {
 .call-center{
     background-color: var(--green);
     width: 60%;
-    margin: 25px auto;
+    margin: 40px auto;
     border-radius: 8px;
     border: 3px inset var(--lightGreen);
     color: var(--white);
@@ -158,16 +169,17 @@ div.tab {
 
 .food-service{
     border-radius: 8px;
-    margin: 25px auto;
+    margin: 25px 10px;
     width: 60%;
     padding: 24px;
     border: 1px solid var(--lightGreen);
     background-color: var(--octonaryGreen);
 }
 
+
 .laundry-service{
     border-radius: 8px;
-    margin: 25px auto;
+    margin: 25px 10px;
     width: 60%;
     padding: 24px;
     border: 1px solid var(--tertiaryOrange);
@@ -195,12 +207,14 @@ div.tab {
 }
 .food-task div.type h3, .laundry-task div.type h3{
     margin-right: 0.8rem;
+    font-size: 1rem;
 }
 
 .food-task div.status{
 background-color: #E9FBF2;
 padding: 6px 10px;
 border-radius: 6rem;
+cursor: pointer;
 }
 
 .laundry-task div.status{
@@ -209,9 +223,6 @@ border-radius: 6rem;
     border-radius: 6rem;
     }
 
-.food-task div.type img, .laundry-task div.type img{
-object-fit: contain;
-}
 
 .food-type{
     display: flex;
@@ -232,26 +243,250 @@ object-fit: contain;
 .food-type img{
     margin-right: 0.8rem;
     border-radius: 8px;
-    object-fit: contain;
 }
 
-div.schedule {
+div.schedule{
     display: flex;
     align-items: center;
     padding-top: 10px;
+    color: #1D352A;
+    font-size: var(--fontSmall);
+}
+
+div.status div p, .modal-date {
+    color: #1D352A;
+    font-size: var(--fontSmall);
 }
 
 div.schedule img{
-    object-fit: contain;
     margin-right: 10px;
 }
 
+div.order div p, div.delivery-address span{
+    color: #4B6358;
+    font-size: var(--fontSmall);
+}
 
+  
+/* Styles for the modal container */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.9s ease-in-out;
+  }
+  
+  /* Styles for the modal content */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 50%;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  div.order{
+    display: flex;
+    padding: 10px;
+    margin: 25px 0;
+    align-items: center;
+  }
+  div.order span,  div.status-history span, div.status-history2 span, div.clean-status span {
+    font-weight: 600;
+  }
+
+  div.order img{
+    margin-right: 10px;
+    width: 25px;
+  }
+
+  div.status p.active{
+    color: var(--green);
+  }
+
+  .delivery-address{
+    padding: 15px;
+    margin: 25px 0;
+    border: 1px dashed #CBD8D2;
+    border-radius: 9px;
+    line-height: 25px;
+  }
+
+  div.status-history{
+    padding: 15px; 
+    margin: 45px 0;
+    border-left: 1px dashed var(--green);
+    position: relative;
+    line-height: 25px;
+  }
+
+  div.clean-status{
+    padding: 15px; 
+    margin: 20px 0;
+    border-left: 1px dashed var(--green);
+    position: relative;
+    line-height: 20px;
+  }
+
+  div.status-history2{
+    position: relative;
+    line-height: 25px;
+  }
+
+  div.status-history div.status, div.status-history2 div.status, div.clean-status div.status{
+    position: relative;
+    top: -25px;
+    margin-left: 10px;
+  }
+
+  div.status-history div.status div, div.status-history2 div.status div, div.clean-status div.status div{
+     display: flex;
+     justify-content: space-between;
+  }
+
+  .clean-status::before{
+    content: "";
+    background-image: url('../img/Tick-Check.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: -10px; 
+  }
+
+  .status-history2::before {
+    content: "";
+    background-image: url('../img/Tick-Check.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: -13px; 
+  }
+
+  .status-history::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--lightGreen);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px; 
+  }
+
+  .status-history::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  div.food-type .info span{
+    color: #4B6358;
+    padding: 10px 0;
+    font-size: var(--fontRegular);
+}
+div.food-type .info p{
+    font-size: 0.9rem;
+}
+
+div.delivery-address p, div.status p {
+    color: var(--grey);
+    font-size: 1.03rem;
+}
+
+div.delivery-address div{
+    border-top: 1px dashed #CBD8D2;
+    padding: 5px 0;
+    margin-top: 10px;
+}
+
+.food-task div.status p{
+    color: var(--green);
+}
+
+.laundry-task div.status p{
+color: var(--orange);
+cursor: pointer;
+}
+
+  
+  /* Styles for the close button */
+  .close, .close1 {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 22px;
+    font-weight: lighter;
+    color: var(--grey);
+    cursor: pointer;
+    background: #F0F4F2;
+    /* padding: 10px; */
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+  
+  /* Show the modal container and content */
+  .modal.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .modal.show .modal-content {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Hide the modal container and content */
+  .modal.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .modal.hide .modal-content {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 
 @media only screen and (max-width: 768px){
-    .container{
-        width: 80%;
-    }
+
+    .modal-content {
+       width: 70%;
+  }
+
+  .food-service, .laundry-service, .call-center, .tab {
+    width: 80%;
+  }
 
     div.menu {
         width: 30%;
@@ -259,6 +494,21 @@ div.schedule img{
 }
 
 @media only screen and (max-width: 480px){
+
+    div.flex{
+        width: 100%;
+        display: block;
+    }
+
+    div.delivery-address p, div.status p {
+        color: var(--grey);
+        font-size: 0.8rem;
+    }
+
+
+.food-service, .laundry-service{
+    margin: 25px auto;
+}
     .container{
         width: 85%;
     }
@@ -271,7 +521,54 @@ div.schedule img{
     div.tab, .call-center, .food-service, .laundry-service {
         width: 100%;
     }
+
+    .call-center{
+        margin: 25px auto;
+    }
     .call-center p {
         width: 80%;
+        font-size: 0.8rem;
+    }
+
+    .tab-item {
+        font-size: var(--fontRegular) !important;
+    }
+
+    .call-center h3, .food-task div.type h3, .laundry-task div.type h3, .food-task div.status p,  .laundry-task div.status p{
+        font-size: 0.9rem;
+    }
+
+    div.food-type .info span{
+        color: #4B6358;
+        padding: 10px 0;
+        font-size: var(--fontSmall);
+    }
+
+    .modal-content{
+        width: 93%;
+    }
+
+    div.status-history2{
+        padding-bottom: 80px;
+    }
+}
+
+@media only screen and (max-width: 393px){
+    .call-center p {
+        
+        font-size: 0.7rem;
+    }
+    .call-center h3, .food-task div.type h3, .laundry-task div.type h3, .food-task div.status p,  .laundry-task div.status p{
+        font-size: 0.8rem;
+    }
+
+    div.food-type .info span{
+        color: #4B6358;
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+
+    .tab-item {
+        font-size: 0.9rem !important;
     }
 }
