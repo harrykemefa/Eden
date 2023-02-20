@@ -1,0 +1,574 @@
+:root {
+    --maxWidth: 1280px;
+    --white: #FFF;
+    --light: #F5F5F5;
+    --black: #000000;
+    --orange: #FF9D00;
+    --lightOrange: #FFC260;
+    --tertiaryOrange: #FFC260;
+    --green: #03A84E;
+    --lightGreen: #6ECE8A;
+    --grey: #0F241B;
+    --midGrey:#1D352A;
+    --tertiaryGrey: #4B6358;
+    --lightGrey: #F0F4F2;
+    --octonaryGreen: #F6FFFA;
+    --fontLarge: 5.6rem;
+    --fontMedium: 1.25rem;
+    --fontRegular: 1rem;
+    --fontSmall: 0.8rem;
+   }
+
+   * {
+       box-sizing: border-box;
+       font-family: 'Cerebri Sans', PT Serif;
+       margin: 0;
+       padding: 0;
+   }
+img{
+    object-fit: contain;
+}
+   body{
+       margin: 0;
+       padding: 0;
+       background-color: var(--light);
+       overflow-x: hidden;
+   } 
+   
+   canvas{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+   }
+
+   .intro{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    padding: 0 45px;
+    
+   }
+
+   .intro img{
+    margin: 1.7rem 0;
+   }
+   
+   .intro h2{
+    font-size: var(--fontMedium);
+    color: var(--grey);
+    line-height: 2rem;
+    font-weight: 700px;
+    margin: 0.4rem 0;
+   }
+
+   .intro p{
+    font-size: var(--fontRegular);
+    font-weight: 400px;
+    line-height: 1.5rem;
+    margin: 0.4rem 0;
+   }
+
+   .intro a{
+    padding: 12px 16px 12px 16px;
+    position: absolute;
+    bottom: 50px;
+    width: 327px;
+    border-radius:  32px;
+    background-color: var(--green);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 24px;
+   }
+
+.container{
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+}
+
+div.flex{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+div.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+div.tab {
+    background-color: var(--lightGrey);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.4rem;
+    width: 80%;
+    margin: 25px auto;
+    position: relative;
+    color: var(--grey);
+    box-shadow: 0.4px 0.4px rgba(0, 0, 0, 0.2)
+}
+.tab-item.active{
+    background-color: var(--white);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--fontMedium);
+    cursor: pointer;
+}
+
+.tab-item{
+    padding: 6px 50px;
+}
+
+.call-center{
+    background-color: var(--green);
+    width: 60%;
+    margin: 40px auto;
+    border-radius: 8px;
+    border: 3px inset var(--lightGreen);
+    color: var(--white);
+    padding: 15px 0px 15px 15px;
+    background-image: url('../img/meal2.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.call-center h3{
+    font-weight: 500;
+    line-height: 24px;
+    font-size: var(--fontMedium);
+    margin: 10px 0;
+}
+
+.call-center p {
+    line-height: 24px;
+    font-weight: lighter;
+    font-size: var(--fontRegular);
+    margin: 10px 0;
+    width: 50%;
+}
+
+.food-service{
+    border-radius: 8px;
+    margin: 25px 10px;
+    width: 60%;
+    padding: 24px;
+    border: 1px solid var(--lightGreen);
+    background-color: var(--octonaryGreen);
+}
+
+
+.laundry-service{
+    border-radius: 8px;
+    margin: 25px 10px;
+    width: 60%;
+    padding: 24px;
+    border: 1px solid var(--tertiaryOrange);
+    background-color: #FFFBF5;
+}
+
+.laundry-task{
+    display: flex;
+    justify-content: space-between;
+    color: var(--orange);
+    margin: 10px 0;
+}
+
+.food-task {
+    display: flex;
+    justify-content: space-between;
+    color: var(--green);
+    margin: 10px 0;
+}
+
+.food-task div.type, .laundry-task div.type{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.food-task div.type h3, .laundry-task div.type h3{
+    margin-right: 0.8rem;
+    font-size: 1rem;
+}
+
+.food-task div.status{
+background-color: #E9FBF2;
+padding: 6px 10px;
+border-radius: 6rem;
+cursor: pointer;
+}
+
+.laundry-task div.status{
+    background-color: #FFF3DF;
+    padding: 6px 10px;
+    border-radius: 6rem;
+    }
+
+
+.food-type{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid #BDEECD;
+}
+
+.laundry-type{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid #FFDA9F;
+}
+
+.food-type img{
+    margin-right: 0.8rem;
+    border-radius: 8px;
+}
+
+div.schedule{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    color: #1D352A;
+    font-size: var(--fontSmall);
+}
+
+div.status div p, .modal-date {
+    color: #1D352A;
+    font-size: var(--fontSmall);
+}
+
+div.schedule img{
+    margin-right: 10px;
+}
+
+div.order div p, div.delivery-address span{
+    color: #4B6358;
+    font-size: var(--fontSmall);
+}
+
+  
+/* Styles for the modal container */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.9s ease-in-out;
+  }
+  
+  /* Styles for the modal content */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 50%;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  div.order{
+    display: flex;
+    padding: 10px;
+    margin: 25px 0;
+    align-items: center;
+  }
+  div.order span,  div.status-history span, div.status-history2 span, div.clean-status span {
+    font-weight: 600;
+  }
+
+  div.order img{
+    margin-right: 10px;
+    width: 25px;
+  }
+
+  div.status p.active{
+    color: var(--green);
+  }
+
+  .delivery-address{
+    padding: 15px;
+    margin: 25px 0;
+    border: 1px dashed #CBD8D2;
+    border-radius: 9px;
+    line-height: 25px;
+  }
+
+  div.status-history{
+    padding: 15px; 
+    margin: 45px 0;
+    border-left: 1px dashed var(--green);
+    position: relative;
+    line-height: 25px;
+  }
+
+  div.clean-status{
+    padding: 15px; 
+    margin: 20px 0;
+    border-left: 1px dashed var(--green);
+    position: relative;
+    line-height: 20px;
+  }
+
+  div.status-history2{
+    position: relative;
+    line-height: 25px;
+  }
+
+  div.status-history div.status, div.status-history2 div.status, div.clean-status div.status{
+    position: relative;
+    top: -25px;
+    margin-left: 10px;
+  }
+
+  div.status-history div.status div, div.status-history2 div.status div, div.clean-status div.status div{
+     display: flex;
+     justify-content: space-between;
+  }
+
+  .clean-status::before{
+    content: "";
+    background-image: url('../img/Tick-Check.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: -10px; 
+  }
+
+  .status-history2::before {
+    content: "";
+    background-image: url('../img/Tick-Check.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: -13px; 
+  }
+
+  .status-history::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--lightGreen);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px; 
+  }
+
+  .status-history::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  div.food-type .info span{
+    color: #4B6358;
+    padding: 10px 0;
+    font-size: var(--fontRegular);
+}
+div.food-type .info p{
+    font-size: 0.9rem;
+}
+
+div.delivery-address p, div.status p {
+    color: var(--grey);
+    font-size: 1.03rem;
+}
+
+div.delivery-address div{
+    border-top: 1px dashed #CBD8D2;
+    padding: 5px 0;
+    margin-top: 10px;
+}
+
+.food-task div.status p{
+    color: var(--green);
+}
+
+.laundry-task div.status p{
+color: var(--orange);
+cursor: pointer;
+}
+
+  
+  /* Styles for the close button */
+  .close, .close1 {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 22px;
+    font-weight: lighter;
+    color: var(--grey);
+    cursor: pointer;
+    background: #F0F4F2;
+    /* padding: 10px; */
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+  
+  /* Show the modal container and content */
+  .modal.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .modal.show .modal-content {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Hide the modal container and content */
+  .modal.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .modal.hide .modal-content {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+@media only screen and (max-width: 768px){
+
+    .modal-content {
+       width: 70%;
+  }
+
+  .food-service, .laundry-service, .call-center, .tab {
+    width: 80%;
+  }
+
+    div.menu {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 480px){
+
+    div.flex{
+        width: 100%;
+        display: block;
+    }
+
+    div.delivery-address p, div.status p {
+        color: var(--grey);
+        font-size: 0.8rem;
+    }
+
+
+.food-service, .laundry-service{
+    margin: 25px auto;
+}
+    .container{
+        width: 85%;
+    }
+
+    div.menu {
+        width: 45%;
+        justify-content: space-between;
+    }
+
+    div.tab, .call-center, .food-service, .laundry-service {
+        width: 100%;
+    }
+
+    .call-center{
+        margin: 25px auto;
+    }
+    .call-center p {
+        width: 80%;
+        font-size: 0.8rem;
+    }
+
+    .tab-item {
+        font-size: var(--fontRegular) !important;
+    }
+
+    .call-center h3, .food-task div.type h3, .laundry-task div.type h3, .food-task div.status p,  .laundry-task div.status p{
+        font-size: 0.9rem;
+    }
+
+    div.food-type .info span{
+        color: #4B6358;
+        padding: 10px 0;
+        font-size: var(--fontSmall);
+    }
+
+    .modal-content{
+        width: 93%;
+    }
+
+    div.status-history2{
+        padding-bottom: 80px;
+    }
+}
+
+@media only screen and (max-width: 393px){
+    .call-center p {
+        
+        font-size: 0.7rem;
+    }
+    .call-center h3, .food-task div.type h3, .laundry-task div.type h3, .food-task div.status p,  .laundry-task div.status p{
+        font-size: 0.8rem;
+    }
+
+    div.food-type .info span{
+        color: #4B6358;
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+
+    .tab-item {
+        font-size: 0.9rem !important;
+    }
+}

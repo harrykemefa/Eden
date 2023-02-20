@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eden App</title>
+   <link rel="stylesheet" href="css/style.css">
+   <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+</head>
+<body>
+    <canvas id="my-canvas"></canvas>
+    <main class="intro">
+        <img src="img/coolsmiley.png" alt="cool smiley image">
+        <h2>Your Eden profile has been completed, Aderinsola!</h2>
+        <p>You’re one step closer to starting your easy life with Eden.</p>
+        <a href="home.html" class="button">Go Home</a>
+    </main>
+</body>
+<script>
+    var confettiSettings = { 
+      target: 'my-canvas', 
+      max: 200, 
+      size: 0.7, 
+      animate: true, 
+      props: ['circle', 'square', 'triangle', 'line'], 
+      colors: [[255, 0, 0], [0, 255, 0], [0, 0, 255],], 
+      gravity: 0.5 
+    };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+   // Stop the confetti after 1 minute
+setTimeout(function() {
+    confetti.clear();
+}, 20000);
+  
+  </script>
+</html>

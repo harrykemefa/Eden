@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="menu">
+                <img src="img/harmburger.png" alt="menu">
+                <p>Hi, Aderinsola!</p>
+            </div>
+            <img src="img/avatar.png" alt="profile avatar">
+        </nav>
+        <main>
+            <div class="tab">
+            <a class="tab-item active">Home</a>
+            <a class="tab-item">Upcoming</a>
+            </div>
+            <div class="call-center">
+                <h3>Tap here to call us</h3>
+                <p>Do you have any inquiry about your meals? You can simply tap to call us.</p>
+            </div>
+    <div class="flex">
+        <div class="food-service">
+            <div class="food-task">
+                <div class="type">
+                    <h3>Food Delivery</h3>
+                    <img src="img/meal1.png" alt="meal">
+                </div>
+                <div class="status" id="open-modal">
+                    <p>View Status &nbsp; ></p>
+                </div>
+            </div>
+            <div class="food-type">
+                <img src="img/BBQ Chicken+French Fries.png" alt="">
+                <div class="info">
+                    <span>French Fries with</span>
+                    <p>BBQ Turkey Wings & Coleslaw</p>
+                </div>
+            </div>
+
+            <div class="schedule">
+                <img src="img/clock.png" alt="">
+                <p>10:00 AM - 11:30am</p>
+            </div>
+           
+        </div>
+
+        <div class="laundry-service">
+            <div class="laundry-task">
+                <div class="type">
+                    <h3>Home Cleaning</h3>
+                    <img src="img/home.png" alt="Home">
+                </div>
+                <div class="status" id="open-modal-2">
+                    <p>View Status &nbsp; ></p>
+                </div>
+            </div>
+
+            <div class="laundry-type">
+                <div class="info">
+                    <p>Get ready; our cleaner is coming to get your house pampered.</p>
+                </div>
+            </div>
+
+            <div class="schedule">
+                <img src="img/clock.png" alt="">
+                <p>10:00 AM - 11:30am</p>
+            </div>
+        </div>
+    </div>
+       
+
+           
+        </main>
+    </div>
+
+    <div id="myModal2" class="modal hide">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-date">Mon, 08 Sep 2021</p>
+            <div class="order">
+                <img src="img/home.png" alt="">
+                <div>
+                  <p>Order Status</p>
+                  <span>Cleaning completed</span>
+                </div>
+                </div>
+
+                <div class="delivery-address">
+                    <span>Cleaning Address</span>
+                    <p>No 6B, Radiators Spring, Lightning Estate, <br> Lagos, Nigeria.</p>
+                    <div>
+                        <span>
+                            Cleaner
+                        </span>
+                        <p>Kelechi Oguike</p>
+                    </div>
+                   
+              </div>
+
+              <div class="clean-status">
+                <div class="status">
+                    <div>
+    
+                        <span>Cleaning completed</span>
+                        <p>4:01 PM</p>
+        
+                    </div>
+                    <p class="active">Give feedback.</p>
+                       
+                </div>
+           
+              </div>
+
+
+              <div class="clean-status">
+                <div class="status">
+                    <div>
+    
+                        <span>Cleaning started</span>
+                        <p>2:35 PM</p>
+        
+                    </div>
+                    <p>Your cleaner has started cleaning.</p>
+                       
+                </div>
+           
+              </div>
+
+              <div class="clean-status">
+                <div class="status">
+                    <div>
+    
+                        <span>Cleaner has arrived</span>
+                        <p>2:26 PM</p>
+        
+                    </div>
+                    <p>Your cleaner has arrived at your location.</p>
+                       
+                </div>
+           
+              </div>
+
+              <div class="clean-status">
+                <div class="status">
+                    <div>
+    
+                        <span>Cleaner en route</span>
+                        <p>12:22 PM</p>
+        
+                    </div>
+                    <p>Your cleaner is on the way to your location!</p>
+                       
+                </div>
+           
+              </div>
+    
+          </div>
+    </div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal hide">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close1">&times;</span>
+          <p class="modal-date">Mon, 08 Sep 2021</p>
+
+          <div class="order">
+          <img src="img/meal1.png" alt="">
+          <div>
+            <p>Order Status</p>
+            <span>Order has arrived</span>
+          </div>
+          </div>
+
+          <div class="delivery-address">
+                <span>Delivery Address</span>
+                <p>No 6B, Radiators Spring, Lightning Estate, <br> Lagos, Nigeria.</p>
+          </div>
+
+          <div class="status-history">
+            <div class="status">
+                <div>
+
+                    <span>Order has arrived</span>
+                    <p>10:56 AM</p>
+    
+                </div>
+                <p>Your order has arrived at your location. Pick it up!</p>
+                   
+            </div>
+       
+          </div>
+
+          <div class="status-history2">
+            <div class="status">
+                <div>
+                    <span>Order on the way</span>
+                    <p>9:14 AM</p>
+                </div>
+                <p>Your order has been dispatched and is on <br>the way to you.</p>
+                   
+            </div>
+       
+          </div>
+
+        </div>
+  
+      </div>
+</body>
+<script>
+    // Get the modal and the close button
+var modal = document.getElementById('myModal');
+var modal2 = document.getElementById("myModal2");
+var closeBtn1 = document.querySelector('.close1');
+var closeBtn2 = document.querySelector('.close');
+var openBtn = document.getElementById('open-modal');
+var openBtn2 = document.getElementById('open-modal-2');
+
+// Function to open modal 1
+function openModal1() {
+  modal.classList.remove("hide");
+  modal.classList.add("show");
+}
+
+// Function to open modal 2
+function openModal2() {
+  modal2.classList.remove("hide");
+  modal2.classList.add("show");
+}
+
+// Function to close modal 1
+function closeModal1() {
+  modal.classList.remove("show");
+  modal.classList.add("hide");
+}
+
+// Function to close modal 2
+function closeModal2() {
+  modal2.classList.remove("show");
+  modal2.classList.add("hide");
+}
+
+// Add click event listeners to the buttons
+openBtn.addEventListener("click", openModal1);
+openBtn2.addEventListener("click", openModal2);
+
+// Add click event listeners to the close buttons
+closeBtn1.addEventListener("click", closeModal1);
+closeBtn2.addEventListener("click", closeModal2);
+
+
+// Close the modals if the user clicks outside of them
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    closeModal1();
+  } else if (event.target == modal2) {
+    closeModal2();
+  }
+});
+</script>
+</html>
