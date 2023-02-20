@@ -5,12 +5,14 @@
     --black: #000000;
     --orange: #FF9D00;
     --lightOrange: #FFC260;
+    --tertiaryOrange: #FFC260;
     --green: #03A84E;
     --lightGreen: #6ECE8A;
     --grey: #0F241B;
     --midGrey:#1D352A;
     --tertiaryGrey: #4B6358;
     --lightGrey: #F0F4F2;
+    --octonaryGreen: #F6FFFA;
     --fontLarge: 5.6rem;
     --fontMedium: 1.25rem;
     --fontRegular: 1rem;
@@ -109,7 +111,7 @@ div.tab {
     align-items: center;
     padding: 0.4rem;
     width: 60%;
-    margin: 10px auto;
+    margin: 25px auto;
     position: relative;
     color: var(--grey);
     box-shadow: 0.4px 0.4px rgba(0, 0, 0, 0.2)
@@ -125,6 +127,126 @@ div.tab {
 .tab-item{
     padding: 6px 50px;
 }
+
+.call-center{
+    background-color: var(--green);
+    width: 60%;
+    margin: 25px auto;
+    border-radius: 8px;
+    border: 3px inset var(--lightGreen);
+    color: var(--white);
+    padding: 15px 0px 15px 15px;
+    background-image: url('../img/meal2.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.call-center h3{
+    font-weight: 500;
+    line-height: 24px;
+    font-size: var(--fontMedium);
+    margin: 10px 0;
+}
+
+.call-center p {
+    line-height: 24px;
+    font-weight: lighter;
+    font-size: var(--fontRegular);
+    margin: 10px 0;
+    width: 50%;
+}
+
+.food-service{
+    border-radius: 8px;
+    margin: 25px auto;
+    width: 60%;
+    padding: 24px;
+    border: 1px solid var(--lightGreen);
+    background-color: var(--octonaryGreen);
+}
+
+.laundry-service{
+    border-radius: 8px;
+    margin: 25px auto;
+    width: 60%;
+    padding: 24px;
+    border: 1px solid var(--tertiaryOrange);
+    background-color: #FFFBF5;
+}
+
+.laundry-task{
+    display: flex;
+    justify-content: space-between;
+    color: var(--orange);
+    margin: 10px 0;
+}
+
+.food-task {
+    display: flex;
+    justify-content: space-between;
+    color: var(--green);
+    margin: 10px 0;
+}
+
+.food-task div.type, .laundry-task div.type{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.food-task div.type h3, .laundry-task div.type h3{
+    margin-right: 0.8rem;
+}
+
+.food-task div.status{
+background-color: #E9FBF2;
+padding: 6px 10px;
+border-radius: 6rem;
+}
+
+.laundry-task div.status{
+    background-color: #FFF3DF;
+    padding: 6px 10px;
+    border-radius: 6rem;
+    }
+
+.food-task div.type img, .laundry-task div.type img{
+object-fit: contain;
+}
+
+.food-type{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid #BDEECD;
+}
+
+.laundry-type{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid #FFDA9F;
+}
+
+.food-type img{
+    margin-right: 0.8rem;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+div.schedule {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+div.schedule img{
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+
 
 @media only screen and (max-width: 768px){
     .container{
@@ -146,7 +268,10 @@ div.tab {
         justify-content: space-between;
     }
 
-    div.tab {
+    div.tab, .call-center, .food-service, .laundry-service {
         width: 100%;
+    }
+    .call-center p {
+        width: 80%;
     }
 }
